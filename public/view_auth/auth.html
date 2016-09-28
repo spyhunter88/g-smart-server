@@ -32,12 +32,16 @@
                         </div>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-lg ladda-button"
+                                <button type="submit" class="btn btn-success btn-custom btn-lg ladda-button"
                                         ladda-button="auth.laddaLoading" data-style="expand-right"
                                         style="background-color: #5cb85c;"
                                         ng-disabled="loginForm.$invalid">
                                         <span class="ladda-label">ĐĂNG NHẬP</span>
                                 </button>
+                                <a ui-sref="register" class="btn btn-warning btn-custom btn-lg ladda-button"
+                                        style="background-color: #ff5050;">
+                                        <span class="ladda-label">ĐĂNG KÝ</span>
+                                </a>
                             </div>
                         </div>
                     </form>

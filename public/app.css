@@ -162,10 +162,21 @@ footer.background-grey .copyright-content {
     TOOLTIPS
 -----------------------------------------------------------------*/
 .tooltip-inner {
-    max-width: 200px;
-    padding: 3px 8px;
-    color: #fff;
-    text-align: center;
-    background-color: #004dff;
-    border-radius: 4px;
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #004dff;
+  border-radius: 4px;
+}
+/* ----------------------------------------------------------------
+    BUTTON
+-----------------------------------------------------------------*/
+.btn-custom:hover {
+  opacity: 0.8;
+  background-color: White;
+}
+.btn-custom {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
