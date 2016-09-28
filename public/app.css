@@ -1,0 +1,171 @@
+/* app css stylesheet */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.slider-selection {
+	background-image: -webkit-linear-gradient(to bottom, #10ccfc 0%, #13d7ff 100%) !important;
+	background-image: -o-linear-gradient(to bottom, #10ccfc 0%, #13d7ff 100%) !important;
+	background-image: linear-gradient(to bottom, #10ccfc 0%, #13d7ff 100%) !important;
+}
+.maudo {
+  color: Red;
+}
+
+h3 {
+  text-align: center;
+}
+div.elastic-server {
+  line-height: 50px;
+}
+div.elastic-server > div > label {
+	float: left;
+	width: 20%;
+}
+div.elastic-server > div > div {
+	display: inline-block;
+	float: right;
+	width: 80%;
+}
+/* Select WINDOW-LINUX */
+div.elastic-server:nth-child(9) > div > div {
+	float: left;
+}
+div.config {
+  text-align: center;
+}
+div.price > span {
+  padding-left: 40px;
+}
+
+/* ----------------------------------------------------------------
+    FOOTER
+-----------------------------------------------------------------*/
+
+#footer {
+    clear: both;
+    position: relative;
+    color: #fff !important;
+    background-color: #00ACF4 !important;
+}
+#footer a {
+  color: #fff !important;
+}
+#footer .logo {
+    margin-bottom: 54px;
+    margin-top: 12px;
+    max-width: 80px;
+}
+.footer-logo {
+    border-right: 1px solid #333;
+    margin-bottom: 20px;
+    margin-right: 18px;
+    padding-right: 16px;
+}
+#footer.background-colored .footer-logo {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+#footer.background-grey .footer-logo {
+    border-right: 1px solid #ccc;
+}
+.footer-content {
+    padding: 40px 0 0 0;
+}
+.footer-content .widget-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+.copyright-content {
+    border-top: 1px solid #D2D2D2;
+    min-height: 80px;
+    padding: 20px 0;
+}
+footer.background-grey .copyright-content {
+    border-top: 1px solid #ddd;
+}
+.copyright-links a {
+    padding: 10px;
+}
+.copyright-text {
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/*Social icons*/
+
+#footer .social-icons {
+    float: right;
+}
+#footer .social-icons.center {
+    float: none;
+    display: inline-block;
+}
+#footer .social-icons:not(.social-icons-colored) li a:hover {
+    background-color: transparent;
+}
+
+#footer .list-large li {
+  padding: 18px 0;
+}
+
+#footer ul {
+  padding: 0px;
+  list-style: none;
+}
+
+#footer .list li {
+  padding: 0;
+  line-height: 25px;
+}
+
+#footer .list-arrow-icons li:before {
+  margin-left:-18px;
+  position: absolute;
+  font-family: fontawesome;
+  content: "\f105";
+}
+/* ----------------------------------------------------------------
+    TOOLTIPS
+-----------------------------------------------------------------*/
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #004dff;
+    border-radius: 4px;
+}

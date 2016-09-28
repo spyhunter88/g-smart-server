@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div ng-show="reg.success" class="alert alert-success">
+                <strong>Thành công!</strong><br/>
+                <span>Bạn đã đăng ký thành viên thành công. Xin hãy quay về trang <a ui-sref="auth">Đăng nhập</a></span>
+            </div>
+            <div ng-show="reg.error" class="alert alert-warning">
+                <strong>Đã có lỗi!</strong><br/>
+                <span>Đã có lỗi trong quá trình đăng ký thành viên. Xin hãy liên hệ với nhân viên của Gdata ở thông tin bên dưới!</span>
+                <ul>
+                    <li>{{reg.errorText}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <strong>Đăng ký thành viên</strong>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" name="registerForm" novalidate ng-submit="reg.register(registerForm.$valid)">
+                        <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$touched && registerForm.name.$invalid }">
+                            <label for="name" class="col-sm-3 control-label">Họ và tên</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="name" placeholder="Họ và tên" required ng-model="reg.name">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$touched && registerForm.email.$invalid }">
+                            <label for="email" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required ng-model="reg.email">
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$touched && registerForm.password.$invalid }">
+                            <label for="password" class="col-sm-3 control-label">Mật khẩu</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required ng-model="reg.password">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : registerForm.passwordConfirm.$touched && registerForm.passwordConfirm.$invalid }">
+                            <label for="passwordConfirm" class="col-sm-3 control-label">Nhập lại mật khẩu</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" name="passwordConfirm" placeholder="Mật khẩu" required compare-to="reg.password" ng-model="reg.passwordConfirm">
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{ 'has-error' : registerForm.phone.$touched && registerForm.phone.$invalid }">
+                            <label for="phone" class="col-sm-3 control-label">Số điện thoại</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="phone" placeholder="Số điện thoại" required ng-model="reg.phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyName" class="col-sm-3 control-label">Tên công ty</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="companyName" placeholder="Tên công ty" ng-model="reg.company_name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyAddress" class="col-sm-3 control-label">Địa chỉ công ty</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="companyAddress" placeholder="Địa chỉ công ty" ng-model="reg.company_address">
+                            </div>
+                        </div>
+
+                        <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-lg ladda-button" 
+                                        ladda-button="reg.laddaLoading" data-style="expand-right" 
+                                        style="background-color: #5cb85c;"
+                                        ng-disabled="registerForm.$invalid">
+                                        <span class="ladda-label">Đăng ký</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

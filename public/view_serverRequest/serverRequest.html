@@ -1,0 +1,122 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div ng-show="success" class="alert alert-success">
+				<strong>Thành công!</strong><br/>
+				<span>Cảm ơn quý khách đã đăng ký dịch vụ của GDATA, Server đang được khởi tạo theo yêu cầu và sẽ có thông báo đến quý khách qua email (<b>{{email}}</b>) trong ít phút tới.</span>
+			</div>
+			<div ng-show="error" class="alert alert-warning">
+				<strong>Đã có lỗi!</strong><br/>
+				<span>Đã có lỗi trong quá trình đăng ký dịch vụ. Xin hãy liên hệ với nhân viên của Gdata ở thông tin bên dưới!</span>
+				<ul>
+					<li>{{errorText}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Lựa chọn cấu hình</h3>
+		</div>
+		<div class="col-md-3">
+			<h3>Thông số</h3>
+		</div>
+		<div class="col-md-3">
+			<h3>Thành tiền</h3>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>CPU</label>
+			<slider ng-model="svrRequest.cpu" min="cpu.min" step="cpu.step" max="cpu.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.cpu}}</strong> GHz</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_cpu | number}} / h - {{price.m_cpu | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>RAM</label>
+			<slider ng-model="svrRequest.ram" min="ram.min" step="ram.step" max="ram.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.ram}}</strong> GB</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_ram | number}} / h - {{price.m_ram | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>SSD</label>
+			<slider ng-model="svrRequest.ssd" min="ssd.min" step="ssd.step" max="ssd.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.ssd}}</strong> GB</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_ssd | number}} / h - {{price.m_ssd | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>IOPS</label>
+			<slider ng-model="svrRequest.iops" min="iops.min" step="iops.step" max="iops.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.iops}}</strong> IOPS</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_iops | number}} / h - {{price.m_iops | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>Bandwidth</label>
+			<slider ng-model="svrRequest.bandwidth" min="bandwidth.min" step="bandwidth.step" max="bandwidth.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.bandwidth}}</strong> Mbps</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_bw | number}} / h - {{price.m_bw | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>IP</label>
+			<slider ng-model="svrRequest.ip" min="ip.min" step="ip.step" max="ip.max" tooltip="always"></slider>
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.ip}}</strong> IP</span>
+		</div>
+		<div class="col-md-3 price">
+			<span>{{price.h_ip | number}} / h - {{price.m_ip | number}} / m</span>
+		</div>
+	</div>
+	<div class="row elastic-server">
+		<div class="col-md-6">
+			<label>OS</label>
+			<input bs-switch ng-model="svrRequest.os" type="checkbox" switch-on-text="Linux" switch-off-text="Windows" 
+				ng-true-value="'Linux'" ng-false-value="'Windows'"
+				switch-off-color="warning" switch-label-width="0">
+		</div>
+		<div class="col-md-3 config">
+			<span><strong class="maudo">{{svrRequest.os}}</strong></span>
+		</div>
+		<div class="col-md-3 price">
+			<span style="font-weight: bold;">Tổng: <span class="maudo">{{price.h_total | number}}</span> / h - <span class="maudo">{{price.m_total | number}}</span> / m</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12" style="text-align: center;">
+			<button class="btn btn-primary btn-lg ladda-button" ng-click="register()" ladda-button="laddaLoading" data-style="expand-right">
+				<span class="ladda-label">ĐĂNG KÝ</span>
+			</button>
+		</div>
+	</div>
+</div>
